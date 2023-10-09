@@ -1,0 +1,26 @@
+array = []
+a = int(input())
+b = int(input())
+if (a > b) :
+    temp = a
+    a = b
+    b = temp
+
+while (b % a != 0):
+    x = int(b // a)
+    array.append(x)
+    a = b % a
+    b = (b-a)/x
+array = array[::-1]
+print(array)
+demo = 1
+x = array[0] * (-1)
+y = 1
+for i in range(1,len(array)):
+    t = x
+    x *= array[i] * (-1)
+    x += demo
+    demo = t
+    if (i == len(array) - 2) :
+        y = x
+print(x,y)
